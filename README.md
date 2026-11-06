@@ -85,11 +85,16 @@ and track usage and activation monthly.
 notebooks/01_data_cleaning.ipynb          profiling, sign-flip correction, non-response flag
 notebooks/02_churn_driver_analysis.ipynb  significance screen, stepwise logit, interactions
 deck/meridian_cloud_churn_findings.pptx   10-slide executive presentation
-data/                                     schema documentation (dataset not yet added)
+data/meridian_churn_data_cleaned.csv      post-cleaning extract, 1,400 accounts
 ```
 
-Requires `pandas`, `numpy`, `scipy`, `statsmodels`, `matplotlib`, `seaborn`. Run the
-notebooks from `notebooks/`; they read `../data/meridian_churn_data.csv`.
+Requires `pandas`, `numpy`, `scipy`, `statsmodels`, `matplotlib`, `seaborn`.
+
+**On running these:** both notebooks begin by loading the *raw* 14-column extract
+(`data/meridian_churn_data.csv`) and doing the cleaning themselves, and that raw file isn't
+in the repo — so neither notebook runs end to end as-is. What is included is the cleaned
+output, which has everything the regressions need: point the load cell at
+`meridian_churn_data_cleaned.csv` and skip cleaning steps 1–7. See `data/README.md`.
 
 Meridian Cloud is fictional and the dataset is synthetic.
 
